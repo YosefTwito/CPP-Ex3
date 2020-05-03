@@ -104,6 +104,7 @@ RealVariable solver::operator== ( const double c , const RealVariable& x){
 */
 
 complex<double> solver:: solve (ComplexVariable x){
+	if ((x.a==complex<double>(0, 0)) && (x.b==complex<double>(0, 0)) && (x.c!=complex<double>(0, 0))) { throw runtime_error("False equation"); }
 	complex<double> dis = (x.b * x.b) - (complex<double> (4, 0) *x.a*x.c);
 	complex<double> ans = 0;
 	if (x.a == complex<double> (0,0)){ ans = (-x.c)/x.b; }
