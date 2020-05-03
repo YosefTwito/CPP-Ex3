@@ -194,7 +194,7 @@ ComplexVariable solver::operator/ ( double c ,const ComplexVariable &x){
 }
 
 ComplexVariable solver::operator^ (const ComplexVariable &x , int n){
-	if (n==0) return ComplexVariable();
+	if (n==0) return ComplexVariable(0, 0, 1);
 	if (n==1) return x;
 	if (n==2) return ComplexVariable(x.a+(x.b*x.b), 0, x.c);
 	else throw runtime_error("Too big Power");
