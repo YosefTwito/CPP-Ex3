@@ -6,6 +6,7 @@ using namespace std;
 using namespace solver;
 
 double solver:: solve (RealVariable x) {
+	if (x.a==0 && x.b==0 && x.c!=0) { throw runtime_error("False equation"); }
     double result=0; 
     double dis = (x.b*x.b)-(4*x.a*x.c);
 	
